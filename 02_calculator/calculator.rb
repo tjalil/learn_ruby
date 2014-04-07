@@ -25,9 +25,23 @@ def multiply(*args)
 end
 
 def factorial(num)
+  ans = []
   if num == 0
-    1
+    ans = 1
   else
-    #do something
-  end    
+    while num != 0
+      ans << num
+      num -= 1
+    end
+    ans.inject(:*)
+  end   
 end
+
+#alternate solution with ruby method 'downto'
+# def factorial(num)
+#   ans = 1
+#   num.downto(1) do |nums|
+#     ans *= nums
+#   end
+#   ans
+# end
